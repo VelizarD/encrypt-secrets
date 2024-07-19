@@ -1,0 +1,16 @@
+---
+name: Encrypt secrets
+description: Encrypts secrets to enable sharing between GitHub jobs
+inputs:
+  secrets:
+    description: Secrets to be encrypted
+    required: true
+  github-token:
+    description: GitHub token to encrypt secrets
+    required: true
+outputs:
+  encrypted-secret:
+    description: Encrypted secret
+runs:
+  using: node20
+  main: dist/index.js
